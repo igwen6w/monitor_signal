@@ -1,0 +1,17 @@
+<?php
+if (PHP_SAPI != "cli") {
+    exit;
+}
+if (!isset($_SERVER['argv'][1])) {
+    echo '缺少PID'.PHP_EOL;
+    exit();
+}
+if (!isset($_SERVER['argv'][2])) {
+    echo '缺少信号命令'.PHP_EOL;
+    exit();
+}
+$pid = $_SERVER['argv'][1];
+$signal = constant(strtoupper($_SERVER['argv'][2]));
+
+posix_kill($pid, $signal);
+echo '已发送信号['.strtoupper($_SERVER['argv'][2]).']给['.$signal.']'.PHP_EOL;

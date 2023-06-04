@@ -1,0 +1,24 @@
+{
+  "name": "igwen6w/monitor_signal",
+  "description": "信号监听器",
+  "authors": [
+    {
+      "name": "igwen6w",
+      "email": "igwen6w@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "ext-pcntl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Igwen6w\\MonitorSignal\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Igwen6w\\MonitorSignal\\Tests\\": "tests/"
+    }
+  }
+}
